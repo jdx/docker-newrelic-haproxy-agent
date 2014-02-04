@@ -1,0 +1,11 @@
+[Unit]
+Description=New Relic HAProxy Agent
+After=docker.service
+Requires=docker.service
+
+[Service]
+ExecStart=/usr/bin/docker start -a newrelic_haproxy_agent
+ExecStop=/usr/bin/docker stop newrelic_haproxy_agent
+
+[Install]
+WantedBy=local.target
