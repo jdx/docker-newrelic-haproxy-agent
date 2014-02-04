@@ -15,5 +15,6 @@ docker stop newrelic_haproxy_agent
 
 echo "Resetting systemd conf..."
 sudo cp newrelic_haproxy_agent.service /media/state/units/newrelic_haproxy_agent.service
+sudo systemctl restart local-enable.service
 sudo systemctl daemon-reload
 sudo systemctl restart newrelic_haproxy_agent
